@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #ffffffd3;
+}
+
+.avatar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-bottom: 20px;
+
+  .name-account {
+    margin: 0 0 0 10px;
+  }
+
+  .user-name {
+    color: #311131;
+    font-weight: 700;
+    font-size: 17px;
+    margin: 0;
+  }
+  .account {
+    color: #311131;
+    font-weight: 300;
+    font-size: 12px;
+    color: #a3a3a3;
+    margin: 0;
+  }
+}
+
+.boards-list {
+  border-top: #a3a3a3 1px solid;
+  border-bottom: #a3a3a3 1px solid;
+}
+
+.active-link {
+  background-color: #f7f7f7;
+  color: $warning;
+  border-radius: 10px;
+}
+
+.active-link .q-icon {
+  color: #ff5722; /* Зміна кольору іконки */
+}
+
+.essential-link:hover {
+  border-radius: 10px;
+}
+
+.q-pa-md {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.boards-list {
+  padding-top: 20px;
+  flex-grow: 1;
+}
+
+.bottom-menu {
+  padding-top: 20px;
+  margin-top: auto;
+}
