@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="q-pa-md">
-      <h3>{{ board.title }}</h3>
+      <h3>{{ $t("messages.board") }} {{ board.id }}</h3>
     </div>
   </q-page>
 </template>

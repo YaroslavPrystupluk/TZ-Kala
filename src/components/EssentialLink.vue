@@ -6,7 +6,7 @@
     </q-item-section>
 
     <q-item-section>
-      <q-item-label :class="{ 'active-link': isActive }">{{ title }}</q-item-label>
+      <q-item-label :class="{ 'active-link': isActive }">{{ $t(title) }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
@@ -24,11 +24,6 @@ export interface EssentialLinkProps {
   link: string;
   icon: string;
 }
-
-// withDefaults(defineProps<EssentialLinkProps>(), {
-//   link: "#",
-//   icon: "",
-// });
 
 const route = useRoute();
 const props = defineProps<EssentialLinkProps>();

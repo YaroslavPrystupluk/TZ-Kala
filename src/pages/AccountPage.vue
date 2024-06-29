@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="q-pa-md">
-      <h3>Account</h3>
+      <h3>{{ $t("messages.accountPage") }}</h3>
     </div>
   </q-page>
 </template>

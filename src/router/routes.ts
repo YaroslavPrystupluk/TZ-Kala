@@ -9,7 +9,11 @@ const routes: RouteRecordRaw[] = [
       {
         path: "board/:id",
         component: () => import("pages/BoardPage.vue"),
-        meta: { title: "Board" },
+        meta: {
+          board: {
+            title: "board.title",
+          },
+        },
       },
       {
         path: "support",

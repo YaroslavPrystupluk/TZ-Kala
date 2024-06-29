@@ -1,9 +1,14 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white">
-      <q-toolbar class=" bg-white text-black rounded-borders shadow-2">
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-        <q-btn @click="$router.back()" flat icon="chevron_left">Back</q-btn>
+      <q-toolbar class=" bg-white text-black rounded-borders shadow-2 justify-between">
+        <div>
+          <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+          <q-btn @click="$router.back()" flat icon="chevron_left">{{ $t("messages.back") }}</q-btn>
+        </div>
+        <div>
+          <ToggleLanguage />
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -13,7 +18,7 @@
           <q-avatar size="40px" font-size="24px" color="accent" text-color="warning" icon="sentiment_satisfied_alt" />
           <div class="name-account">
             <p class="user-name">John</p>
-            <p class="account">Switch account</p>
+            <p class="account">{{ $t("messages.switchAccount") }}</p>
           </div>
         </div>
 
@@ -35,6 +40,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import EssentialLink, { EssentialLinkProps } from "components/EssentialLink.vue";
+import ToggleLanguage from "components/ToggleLanguage.vue";
 
 defineOptions({
   name: "MainLayout",
@@ -42,17 +48,17 @@ defineOptions({
 
 const linksListBoard: EssentialLinkProps[] = [
   {
-    title: "Board 1",
+    title: "messages.board",
     icon: "grid_view",
     link: "/board/1",
   },
   {
-    title: "Board 2",
+    title: "messages.board",
     icon: "grid_view",
     link: "/board/2",
   },
   {
-    title: "Board 3",
+    title: "messages.board",
     icon: "grid_view",
     link: "/board/3",
   },
@@ -60,12 +66,12 @@ const linksListBoard: EssentialLinkProps[] = [
 
 const linksListAccount: EssentialLinkProps[] = [
   {
-    title: "Help",
+    title: "messages.help",
     icon: "help_outline",
     link: "/support",
   },
   {
-    title: "Account Setting",
+    title: "messages.accountSettings",
     icon: "settings",
     link: "/account",
   },
@@ -77,4 +83,5 @@ const leftDrawerOpen = ref(false);
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
+
 </script>
