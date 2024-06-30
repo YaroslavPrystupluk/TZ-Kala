@@ -23,8 +23,15 @@
         </div>
 
         <q-list class="boards-list">
-          <EssentialLink v-for="link in linksListBoard" :key="link.title" v-bind="link" />
+
+          <!-- <EssentialLink v-for="link in linksListBoard" :key="link.title" v-bind="link" /> -->
+          <q-btn-dropdown flat icon="grid_view" :label="$t('messages.board')">
+            <q-list>
+              <EssentialLink v-for="link in linksListBoard" :key="link.title" v-bind="link" />
+            </q-list>
+          </q-btn-dropdown>
         </q-list>
+
         <q-list class="bottom-menu">
           <EssentialLink v-for="link in linksListAccount" :key="link.title" v-bind="link" />
         </q-list>
