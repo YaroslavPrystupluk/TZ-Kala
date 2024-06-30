@@ -21,6 +21,10 @@ body {
     margin: 0 0 0 10px;
   }
 
+  .q-btn.q-btn-item {
+    border-radius: 10px;
+  }
+
   .menu .user-name {
     color: #311131;
     font-weight: 700;
@@ -52,25 +56,36 @@ body {
   color: $warning;
 }
 
-.essential-link:hover {
+.essential-link {
   width: 100%;
-  border-radius: 10px;
-  background-color: #f7f7f7;
-  color: $warning;
-  .q-icon {
-    color: $warning;
-  }
 }
 
-.q-pa-md {
+.essential-link:hover {
+  border-radius: 10px;
+}
+
+.essential-link:hover .icon-hover {
+  color: $warning;
+}
+
+.essential-link:hover .label-hover {
+  color: $warning;
+}
+
+.container-drawer {
+  padding: 45px 12px;
   display: flex;
   flex-direction: column;
-  // height: 100vh;
+  height: 100vh;
 }
 
 .boards-list {
   padding-top: 20px;
   flex-grow: 1;
+}
+
+.no-arrow .q-btn-dropdown__arrow-container {
+  display: none;
 }
 
 .bottom-menu {
@@ -83,4 +98,29 @@ body {
 
 .hover-effect:hover .q-btn__content {
   color: $warning;
+}
+
+.full-width-btn {
+  width: 100%;
+  padding: 10px 17px;
+}
+
+.on-left {
+  margin: 0 8px 0 0;
+}
+
+.q-item__section--avatar {
+  min-width: 0;
+}
+
+.q-item__section--side {
+  padding: 0 8px 0 0;
+}
+
+.custom-border-radius:hover {
+  border-radius: 10px !important;
+}
+
+.link-spacing {
+  margin-bottom: 8px;
 }

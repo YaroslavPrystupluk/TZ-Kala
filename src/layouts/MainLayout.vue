@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white">
       <q-toolbar class=" bg-white text-black rounded-borders shadow-2 justify-between">
-        <div>
+        <div class="wrapper-btn">
           <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
           <q-btn @click="$router.back()" flat icon="chevron_left">{{ $t("messages.back") }}</q-btn>
         </div>
@@ -13,7 +13,7 @@
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <div class="q-pa-md">
+      <div class="container-drawer">
         <div class="avatar-wrapper">
           <q-avatar size="40px" font-size="24px" color="accent" text-color="warning" icon="sentiment_satisfied_alt" />
           <div class="name-account">
@@ -23,7 +23,7 @@
         </div>
 
         <q-list class="boards-list">
-          <DropDownMenu v-for="link in linksListBoard" :key="link.title" v-bind="link" />
+          <DropDownMenu v-for="link in listBoard" :key="link.title" :to="link.link" />
           <EssentialLink v-for="link in linksListBoard" :key="link.title" v-bind="link" />
         </q-list>
 
@@ -48,6 +48,24 @@ import DropDownMenu from "src/components/DropDownMenu.vue";
 defineOptions({
   name: "MainLayout",
 });
+
+const listBoard: EssentialLinkProps[] = [
+  {
+    title: "messages.board",
+    icon: "grid_view",
+    link: "/board/1",
+  },
+  {
+    title: "messages.board",
+    icon: "grid_view",
+    link: "/board/2",
+  },
+  {
+    title: "messages.board",
+    icon: "grid_view",
+    link: "/board/3",
+  },
+];
 
 const linksListBoard: EssentialLinkProps[] = [
   {

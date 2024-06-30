@@ -16,6 +16,11 @@ const routes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "create-board",
+        component: () => import("pages/CreateBoardPage.vue"),
+        meta: { title: "Create Board" },
+      },
+      {
         path: "support",
         component: () => import("pages/SupportPage.vue"),
         meta: { title: "Support" },
@@ -26,7 +31,7 @@ const routes: RouteRecordRaw[] = [
         meta: { title: "Edit Profile" },
       },
       {
-        path: "school/:id",
+        path: "/board/:id/school",
         component: () => import("pages/SchoolPage.vue"),
         meta: {
           school: {
@@ -35,17 +40,13 @@ const routes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "create-board",
-        component: () => import("pages/CreateBoardPage.vue"),
+        path: "/board/:id/create-card",
+        component: () => import("pages/CreateCardPage.vue"),
         meta: { title: "Create Board" },
       },
+
       {
-        path: "create-card",
-        component: () => import("pages/CreateCardPage.vue"),
-        meta: { title: "Create Card" },
-      },
-      {
-        path: "edit-mode/:id",
+        path: "/board/:id/edit-mode",
         component: () => import("pages/EditCardPage.vue"),
         meta: {
           edit: {
@@ -54,7 +55,7 @@ const routes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "board-settings/:id",
+        path: "/board/:id/board-settings",
         component: () => import("pages/BoardSettingsPage.vue"),
         meta: {
           edit: {
