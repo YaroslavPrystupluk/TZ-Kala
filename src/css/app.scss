@@ -21,7 +21,7 @@ body {
     margin: 0 0 0 10px;
   }
 
-  .user-name {
+  .menu .user-name {
     color: #311131;
     font-weight: 700;
     font-size: 17px;
@@ -42,23 +42,30 @@ body {
 }
 
 .active-link {
+  width: 100%;
   background-color: #f7f7f7;
   color: $warning;
   border-radius: 10px;
 }
 
 .active-link .q-icon {
-  color: #ff5722; /* Зміна кольору іконки */
+  color: $warning;
 }
 
 .essential-link:hover {
+  width: 100%;
   border-radius: 10px;
+  background-color: #f7f7f7;
+  color: $warning;
+  .q-icon {
+    color: $warning;
+  }
 }
 
 .q-pa-md {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  // height: 100vh;
 }
 
 .boards-list {
@@ -69,4 +76,11 @@ body {
 .bottom-menu {
   padding-top: 20px;
   margin-top: auto;
+}
+.hover-effect:hover .q-icon {
+  color: $warning;
+}
+
+.hover-effect:hover .q-btn__content {
+  color: $warning;
 }

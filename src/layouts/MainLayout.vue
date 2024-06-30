@@ -23,13 +23,8 @@
         </div>
 
         <q-list class="boards-list">
-
-          <!-- <EssentialLink v-for="link in linksListBoard" :key="link.title" v-bind="link" /> -->
-          <q-btn-dropdown flat icon="grid_view" :label="$t('messages.board')">
-            <q-list>
-              <EssentialLink v-for="link in linksListBoard" :key="link.title" v-bind="link" />
-            </q-list>
-          </q-btn-dropdown>
+          <DropDownMenu v-for="link in linksListBoard" :key="link.title" v-bind="link" />
+          <EssentialLink v-for="link in linksListBoard" :key="link.title" v-bind="link" />
         </q-list>
 
         <q-list class="bottom-menu">
@@ -48,6 +43,7 @@
 import { ref } from "vue";
 import EssentialLink, { EssentialLinkProps } from "components/EssentialLink.vue";
 import ToggleLanguage from "components/ToggleLanguage.vue";
+import DropDownMenu from "src/components/DropDownMenu.vue";
 
 defineOptions({
   name: "MainLayout",
@@ -55,19 +51,9 @@ defineOptions({
 
 const linksListBoard: EssentialLinkProps[] = [
   {
-    title: "messages.board",
-    icon: "grid_view",
-    link: "/board/1",
-  },
-  {
-    title: "messages.board",
-    icon: "grid_view",
-    link: "/board/2",
-  },
-  {
-    title: "messages.board",
-    icon: "grid_view",
-    link: "/board/3",
+    title: "messages.newBoard",
+    icon: "add_circle_outline",
+    link: "/create-board",
   },
 ];
 
@@ -90,5 +76,4 @@ const leftDrawerOpen = ref(false);
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
-
 </script>

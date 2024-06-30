@@ -25,6 +25,25 @@ const routes: RouteRecordRaw[] = [
         component: () => import("pages/AccountPage.vue"),
         meta: { title: "Edit Profile" },
       },
+      {
+        path: "school/:id",
+        component: () => import("pages/SchoolPage.vue"),
+        meta: {
+          school: {
+            title: "school.title",
+          },
+        },
+      },
+      {
+        path: "create-board",
+        component: () => import("pages/CreateBoardPage.vue"),
+        meta: { title: "Create Board" },
+      },
+      {
+        path: "create-card",
+        component: () => import("pages/CreateCardPage.vue"),
+        meta: { title: "Create Card" },
+      },
     ],
   },
 
