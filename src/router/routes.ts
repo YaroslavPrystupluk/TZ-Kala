@@ -44,6 +44,24 @@ const routes: RouteRecordRaw[] = [
         component: () => import("pages/CreateCardPage.vue"),
         meta: { title: "Create Card" },
       },
+      {
+        path: "edit-mode/:id",
+        component: () => import("pages/EditCardPage.vue"),
+        meta: {
+          edit: {
+            title: "edit.title",
+          },
+        },
+      },
+      {
+        path: "board-settings/:id",
+        component: () => import("pages/BoardSettingsPage.vue"),
+        meta: {
+          edit: {
+            title: "edit.title",
+          },
+        },
+      },
     ],
   },
 
