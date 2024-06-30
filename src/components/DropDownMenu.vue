@@ -3,8 +3,8 @@
     <q-btn-dropdown flat icon="grid_view" :label="$t('messages.board')" no-caps="no-caps" align="left" :to="link"
       class="dropdown-hover hover-effect">
       <q-list class="dropdown-hover">
-        <q-item v-for="link in linksListBoard" :key="link.title" clickable v-close-popup @click="onItemClick"
-          class="dropdown-hover">
+        <q-item v-for="link in linksListBoard" :key="link.title" clickable v-close-popup
+          @click="$router.push(link.link)" class="dropdown-hover">
           <EssentialLink v-bind="link" />
         </q-item>
       </q-list>
@@ -21,9 +21,6 @@ export default {
   },
   setup() {
     return {
-      onItemClick() {
-        console.log("Clicked on an Item");
-      },
       linksListBoard: [
         {
           title: "messages.schoolLevel",
