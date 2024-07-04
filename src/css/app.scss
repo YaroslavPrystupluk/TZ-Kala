@@ -15,6 +15,19 @@ body {
   height: 172px;
 }
 
+.custom-header {
+  border-bottom-left-radius: $generic-border-radius !important;
+  border-bottom-right-radius: $generic-border-radius !important;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-btn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+
 .avatar-wrapper {
   display: flex;
   align-items: center;
@@ -67,6 +80,10 @@ body {
   color: $warning;
 }
 
+.q-item__label {
+  padding: 0;
+}
+
 .active-link .q-icon {
   color: $warning;
 }
@@ -113,7 +130,7 @@ body {
 }
 
 .link-spacing {
-  margin-bottom: 8px;
+  padding-bottom: 8px;
 }
 
 .no-arrow .q-expansion-item__toggle-icon {

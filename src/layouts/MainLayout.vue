@@ -1,10 +1,10 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="bg-white text-black header-height rounded-borders">
+    <q-header bordered class="bg-white text-black header-height custom-header">
       <q-toolbar class="justify-between q-pt-xl">
         <div class="wrapper-btn">
-          <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-          <q-btn @click="$router.back()" flat icon="chevron_left">{{ $t("messages.back") }}</q-btn>
+          <q-btn class="q-ml-md" flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+          <q-btn class="q-pl-xs" @click="$router.back()" flat icon="chevron_left">{{ $t("messages.back") }}</q-btn>
         </div>
         <div>
           <ToggleLanguage />
@@ -12,7 +12,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer :width=410 v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer :width=410 v-model="leftDrawerOpen" show-if-above bordered class="hide-scrollbar">
       <div class="container-drawer">
         <div class="avatar-wrapper">
           <q-avatar size="40px" font-size="24px" color="accent" text-color="warning" icon="sentiment_satisfied_alt" />
