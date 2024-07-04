@@ -11,7 +11,7 @@ export default {
     accountSettings: "Налаштування акаунту",
     switchAccount: "Змінити акаунт",
     language: "Мова",
-    board: "Дошка",
+    board: "Дошки",
     newBoard: "Нова дошка",
     schoolLevel: "Школа(Рівень 1)",
     createNewCard: "Створити нову картку",

@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="bg-white">
-      <q-toolbar class=" bg-white text-black rounded-borders shadow-2 justify-between">
+    <q-header elevated class="bg-white text-black header-height rounded-borders">
+      <q-toolbar class="justify-between q-pt-xl">
         <div class="wrapper-btn">
           <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
           <q-btn @click="$router.back()" flat icon="chevron_left">{{ $t("messages.back") }}</q-btn>
@@ -12,18 +12,18 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer :width=410 v-model="leftDrawerOpen" show-if-above bordered>
       <div class="container-drawer">
         <div class="avatar-wrapper">
           <q-avatar size="40px" font-size="24px" color="accent" text-color="warning" icon="sentiment_satisfied_alt" />
           <div class="name-account">
-            <p class="user-name">John</p>
+            <p class="user-name q-mb-none ">John</p>
             <p class="account">{{ $t("messages.switchAccount") }}</p>
           </div>
         </div>
 
         <q-list class="boards-list">
-          <DropDownMenu v-for="link in listBoard" :key="link.title" :to="link.link" />
+          <DropDownMenu v-for="link in listBoard" :key="link.title" @click="$router.push(link.link)" />
           <EssentialLink v-for="link in linksListBoard" :key="link.title" v-bind="link" />
         </q-list>
 
@@ -94,3 +94,5 @@ function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
+
+<style lang="scss" scoped></style>

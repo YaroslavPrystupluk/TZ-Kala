@@ -11,7 +11,7 @@ export default {
     accountSettings: "Account settings",
     switchAccount: "Switch account",
     language: "Language",
-    board: "Board",
+    board: "Boards",
     newBoard: "New Board",
     schoolLevel: "School(Level 1)",
     createNewCard: "Create new card",

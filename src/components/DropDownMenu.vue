@@ -1,12 +1,12 @@
 <template>
-  <q-btn-dropdown stretch flat icon="grid_view" :label="$t('messages.board')" no-caps align="left"
-    class="dropdown-hover hover-effect no-arrow full-width-btn custom-border-radius link-spacing">
+  <q-expansion-item header-class="hover-link hover-text-yellow" icon="grid_view" :label="$t('messages.board')"
+    class="full-width-btn link-spacing no-arrow">
     <q-list>
-      <q-item v-for="link in linksListBoard" :key="link.title" clickable v-close-popup @click="$router.push(link.link)">
+      <q-item class="q-pt-xs" v-for="link in linksListBoard" :key="link.title" @click="$router.push(link.link)">
         <EssentialLink v-bind="link" />
       </q-item>
     </q-list>
-  </q-btn-dropdown>
+  </q-expansion-item>
 </template>
 
 <script lang="ts">
